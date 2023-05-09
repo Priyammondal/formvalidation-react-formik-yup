@@ -1,3 +1,13 @@
+form {
+  position: relative;
+  padding: 2rem;
+  height: 100%;
+}
+button {
+  position: absolute;
+  bottom: 30px;
+  right: 180px
+}
 .container > div {
   display: flex;
   justify-content: space-between;

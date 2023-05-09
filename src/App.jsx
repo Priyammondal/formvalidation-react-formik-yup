@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import { registrationSchema } from "./schemas";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 import "./App.css";
 import toast from "react-hot-toast";
 
@@ -31,7 +31,7 @@ const App = () => {
 
   return (
     <form
-      className="container min-vh-100 d-flex gap-3 justify-content-center align-items-center flex-column"
+      className="container d-flex gap-4 justify-content-center align-items-center flex-column"
       style={{ background: "#CBDAE9" }}
       onSubmit={formik.handleSubmit}
     >
@@ -52,6 +52,7 @@ const App = () => {
             placeholder="Enter full name"
             onChange={formik.handleChange}
             value={formik.values.name}
+            onBlur={formik.handleBlur}
           />
           {formik.errors.name && formik.touched.name ? (
             <div className="text text-danger">{formik.errors.name}</div>
@@ -76,6 +77,7 @@ const App = () => {
             placeholder="Enter your email address"
             onChange={formik.handleChange}
             value={formik.values.email}
+            onBlur={formik.handleBlur}
           />
           {formik.errors.email && formik.touched.email ? (
             <div className="text text-danger">{formik.errors.email}</div>
@@ -100,6 +102,7 @@ const App = () => {
             placeholder="Enter age"
             onChange={formik.handleChange}
             value={formik.values.age}
+            onBlur={formik.handleBlur}
           />
           {formik.errors.age && formik.touched.age ? (
             <div className="text text-danger">{formik.errors.age}</div>
@@ -175,6 +178,7 @@ const App = () => {
             }
             onChange={formik.handleChange}
             value={formik.values.jobtitle}
+            onBlur={formik.handleBlur}
           >
             <option value="">Select One</option>
             <option value="QA">Quality Analyst</option>
@@ -206,6 +210,7 @@ const App = () => {
             placeholder="Enter your password"
             onChange={formik.handleChange}
             value={formik.values.password}
+            onBlur={formik.handleBlur}
           />
           {formik.errors.password && formik.touched.password ? (
             <div className="text text-danger">{formik.errors.password}</div>
@@ -230,6 +235,7 @@ const App = () => {
             placeholder="Confirm Password"
             onChange={formik.handleChange}
             value={formik.values.confirm_password}
+            onBlur={formik.handleBlur}
           />
           {formik.errors.confirm_password && formik.touched.confirm_password ? (
             <div className="text text-danger">
@@ -250,6 +256,7 @@ const App = () => {
             name="terms"
             onChange={formik.handleChange}
             checked={formik.values.terms}
+            onBlur={formik.handleBlur}
           />
           <label class="form-check-label ms-3" for="flexCheckDefault">
             I have read and agree to the Terms and Conditions​
